@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oura Ring 5 · Design Rationale</title>
+  <meta name="description" content="Design rationale for an unofficial Oura Ring 5 website concept: problems, proto-personas, principles, information architecture, key flows, design system, accessibility and success metrics." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%2316151a' stroke-width='4'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="proposal.css" />
+</head>
+<body class="doc">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="concept-bar" role="note">
+    <span><strong>Unofficial design concept.</strong> Not affiliated with or endorsed by Oura.</span>
+    <nav class="tabs" aria-label="Proposal views">
+      <a href="index.html">Concept site</a>
+      <a href="proposal.html" aria-current="page">Design rationale</a>
+    </nav>
+  </div>
+
+  <div class="doc-layout">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-title">Contents</p>
+      <ol>
+        <li><a href="#opportunity">The opportunity</a></li>
+        <li><a href="#people">Who it's for</a></li>
+        <li><a href="#friction">Where purchases stall</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#ia">Structure</a></li>
+        <li><a href="#flow">Size-first flow</a></li>
+        <li><a href="#decisions">Key decisions</a></li>
+        <li><a href="#system">Design system</a></li>
+        <li><a href="#a11y">Accessibility</a></li>
+        <li><a href="#measure">Measuring success</a></li>
+        <li><a href="#plan">Plan &amp; next steps</a></li>
+      </ol>
+    </nav>
+
+    <main id="main">
+      <!-- Cover -->
+      <header class="cover">
+        <p class="eyebrow">Website proposal · November 2026</p>
+        <h1>Making Oura Ring 5 easier to <em>choose</em>, <em>size</em> and <em>trust</em>.</h1>
+        <dl class="meta">
+          <div><dt>Client</dt><dd>Oura (unsolicited concept)</dd></div>
+          <div><dt>Scope</dt><dd>Ring 5 product page and purchase flow</dd></div>
+          <div><dt>Discipline</dt><dd>UX research &amp; UI design</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="index.html">Open the concept site
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </header>
+
+      <!-- 01 -->
+      <section id="opportunity" aria-labelledby="h-opp">
+        <p class="num">01</p>
+        <h2 id="h-opp">The opportunity</h2>
+        <p class="lead">Ring 5 is a considered purchase. It costs $399–$499 plus an ongoing membership, it has to fit a finger it has never seen, and its value only becomes clear after weeks of wear. Each of those creates a reason to hesitate. This proposal designs each hesitation out of the page.</p>
+        <div class="cards-3">
+          <article class="card">
+            <p class="card-k">Fit</p>
+            <h3>"What if it doesn't fit?"</h3>
+            <p><b>Risk:</b> buyers guess a size, or leave to find out.</p>
+            <p><b>Our answer:</b> sizing is a first-class step, and the kit-first route is the recommended default.</p>
+          </article>
+          <article class="card">
+            <p class="card-k">Cost</p>
+            <h3>"What will I actually pay?"</h3>
+            <p><b>Risk:</b> membership found late feels like a hidden fee, and erodes trust.</p>
+            <p><b>Our answer:</b> membership appears in the first screen, the order summary and a cost calculator.</p>
+          </article>
+          <article class="card">
+            <p class="card-k">Value</p>
+            <h3>"What will it tell me?"</h3>
+            <p><b>Risk:</b> sensor specs don't answer "why would I wear this?"</p>
+            <p><b>Our answer:</b> lead with the three morning scores and what decisions they help you make.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section id="people" aria-labelledby="h-people">
+        <p class="num">02</p>
+        <h2 id="h-people">Who we're designing for</h2>
+        <p class="lead">Three proto-personas built from the product's positioning. They are assumptions, not research findings, and the first thing we would test in discovery.</p>
+        <div class="cards-3">
+          <article class="card persona">
+            <p class="card-k">Proto-persona A</p>
+            <h3>The sleep-curious professional</h3>
+            <dl>
+              <dt>Wants</dt><dd>To understand why they wake up tired.</dd>
+              <dt>Worries</dt><dd>Paying monthly for data they won't use.</dd>
+              <dt>Needs from the page</dt><dd>Plain-language outcomes and the full cost up front.</dd>
+            </dl>
+          </article>
+          <article class="card persona">
+            <p class="card-k">Proto-persona B</p>
+            <h3>The training-focused athlete</h3>
+            <dl>
+              <dt>Wants</dt><dd>To know when to push and when to recover.</dd>
+              <dt>Worries</dt><dd>Whether Ring 5 is worth it over Ring 4.</dd>
+              <dt>Needs from the page</dt><dd>An honest, verified comparison and battery details.</dd>
+            </dl>
+          </article>
+          <article class="card persona">
+            <p class="card-k">Proto-persona C</p>
+            <h3>The gift buyer</h3>
+            <dl>
+              <dt>Wants</dt><dd>A thoughtful, premium gift.</dd>
+              <dt>Worries</dt><dd>They can't know the recipient's ring size.</dd>
+              <dt>Needs from the page</dt><dd>A sizing route that doesn't require knowing the size.</dd>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section id="friction" aria-labelledby="h-friction">
+        <p class="num">03</p>
+        <h2 id="h-friction">Where wearable purchases stall</h2>
+        <p class="lead">A heuristic review of common patterns across smart-ring and wearable product pages, mapped to Nielsen's usability heuristics. These are hypotheses to check against Oura's analytics in discovery.</p>
+        <ol class="issues">
+          <li>
+            <span class="sev" data-sev="high">High</span>
+            <div><h3>Size is asked after the buyer has committed</h3><p>Uncertainty arrives at the worst moment, at checkout, or after delivery as an exchange.</p></div>
+            <span class="heur">Error prevention</span>
+          </li>
+          <li>
+            <span class="sev" data-sev="high">High</span>
+            <div><h3>The subscription appears after the hardware price</h3><p>A price that grows late in the journey reads as a hidden cost, even when it's disclosed.</p></div>
+            <span class="heur">Visibility of system status</span>
+          </li>
+          <li>
+            <span class="sev" data-sev="med">Medium</span>
+            <div><h3>Feature-first copy</h3><p>Sensor names and metrics don't map to the buyer's question: "what will this change for me?"</p></div>
+            <span class="heur">Match with the real world</span>
+          </li>
+          <li>
+            <span class="sev" data-sev="med">Medium</span>
+            <div><h3>Finish price differences hidden in selectors</h3><p>Buyers have to click through options to discover that some finishes cost $100 more.</p></div>
+            <span class="heur">Recognition over recall</span>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 04 -->
+      <section id="principles" aria-labelledby="h-principles">
+        <p class="num">04</p>
+        <h2 id="h-principles">Design principles</h2>
+        <ol class="principles">
+          <li><b>Fit before finance.</b> Remove the biggest uncertainty before asking for money.</li>
+          <li><b>No surprise costs.</b> Every price, recurring or not, is visible before Add to bag.</li>
+          <li><b>Outcomes over sensors.</b> Explain what you'll learn, then how it works.</li>
+          <li><b>Calm by default.</b> A wellness product shouldn't feel urgent. No countdowns, no pressure tactics, gentle motion.</li>
+        </ol>
+      </section>
+
+      <!-- 05 -->
+      <section id="ia" aria-labelledby="h-ia">
+        <p class="num">05</p>
+        <h2 id="h-ia">Page structure</h2>
+        <p class="lead">The page follows the buyer's questions in the order they ask them: <i>what is it → what will it do for me → which one → does it fit → what does it cost → is it the right model?</i></p>
+        <div class="ia">
+          <div class="ia-col">
+            <p class="ia-label">Ring 5 product page</p>
+            <ol class="ia-list">
+              <li><b>Hero</b><span>Benefit, proof points, price and membership up front</span></li>
+              <li><b>What it tells you</b><span>Sleep, Readiness, Activity, plus what's new</span></li>
+              <li class="ia-key"><b>Choose yours</b><span>1 Finish · 2 Size · 3 Membership · Summary</span></li>
+              <li><b>True cost</b><span>Ownership calculator</span></li>
+              <li><b>Compare</b><span>Ring 5 vs Ring 4 Ceramic, verified rows only</span></li>
+              <li><b>FAQ</b><span>Membership, sizing, battery, medical use</span></li>
+            </ol>
+          </div>
+          <div class="ia-col">
+            <p class="ia-label">Connected journeys</p>
+            <ol class="ia-list">
+              <li><b>Bag drawer</b><span>Review without leaving the page</span></li>
+              <li><b>Sizing kit tracking</b><span>Kit shipped → size confirmed in app → ring ships</span></li>
+              <li><b>Membership page</b><span>What's included, billing, cancellation</span></li>
+              <li><b>Gift purchase</b><span>Kit ships to recipient; their size, their ring</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section id="flow" aria-labelledby="h-flow">
+        <p class="num">06</p>
+        <h2 id="h-flow">The key flow: size first</h2>
+        <p class="lead">The proposed flow moves the moment of uncertainty to before the ring is made and shipped, and makes it the default path.</p>
+        <div class="flow">
+          <p class="flow-label">Typical wearable flow</p>
+          <ol class="flow-steps">
+            <li>Browse</li><li>Pick finish</li><li class="bad"><span>Guess a size</span></li><li>Pay</li><li>Ring arrives</li><li class="bad"><span>Doesn't fit, so exchange</span></li>
+          </ol>
+          <p class="flow-label">Proposed flow</p>
+          <ol class="flow-steps good">
+            <li>Browse</li><li>Pick finish</li><li class="ok"><span>"Kit first" (default)</span></li><li>Pay</li><li class="ok"><span>Try sizes at home</span></li><li class="ok"><span>Confirm in app, ring ships</span></li>
+          </ol>
+          <p class="note">Buyers who already know their Oura size can skip the kit. Choosing "I know my size" reveals a size field, and inline validation stops the order if it's left empty.</p>
+        </div>
+      </section>
+
+      <!-- 07 -->
+      <section id="decisions" aria-labelledby="h-dec">
+        <p class="num">07</p>
+        <h2 id="h-dec">Key design decisions</h2>
+        <ol class="decisions">
+          <li>
+            <h3>Price and membership in the first screen</h3>
+            <p>The hero states "From $399 · Membership $5.99/month, first month free." Disclosing the full cost early builds trust and removes surprises later.</p>
+            <a class="link" href="index.html#main">See the hero</a>
+          </li>
+          <li>
+            <h3>Finish cards that show the price</h3>
+            <p>Every finish shows its price on the card, so the $100 premium is visible without clicking. Selection is shown by a filled radio, a heavier border and elevation, never by colour alone. The ring preview updates live.</p>
+            <a class="link" href="index.html#buy">Try the finish picker</a>
+          </li>
+          <li>
+            <h3>Sizing kit as the recommended default</h3>
+            <p>The safest path is preselected and labelled "Recommended", with a one-line reason: fit affects accuracy. That serves the gift buyer and the first-time buyer alike.</p>
+            <a class="link" href="index.html#size-step">See the size step</a>
+          </li>
+          <li>
+            <h3>"Due today" kept apart from "then"</h3>
+            <p>The order summary separates the one-time charge from the recurring one, in plain words: "Then $5.99/month for membership, starting after your free month."</p>
+            <a class="link" href="index.html#buy">See the summary</a>
+          </li>
+          <li>
+            <h3>An honest ownership calculator</h3>
+            <p>Buyers can see the 1, 2 or 3-year total. We state that the yearly plan saves only $1.89 a year, rather than implying a bigger discount. Honest numbers make the product easier to trust and to recommend.</p>
+            <a class="link" href="index.html#cost">Try the calculator</a>
+          </li>
+          <li>
+            <h3>A comparison with verified rows only</h3>
+            <p>Where we couldn't confirm a detail, the table says "Check with Oura" rather than guessing. On a health product, a wrong spec costs more than a missing one.</p>
+            <a class="link" href="index.html#compare">See the comparison</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 08 -->
+      <section id="system" aria-labelledby="h-sys">
+        <p class="num">08</p>
+        <h2 id="h-sys">Design system</h2>
+        <div class="sys-grid">
+          <div>
+            <h3 class="sys-h">Type</h3>
+            <p class="type-sample serif">Newsreader <span>Display · headings, numbers</span></p>
+            <p class="type-sample sans">Inter <span>Interface · body, labels, controls</span></p>
+            <p class="small">1.25 modular scale from 13 to 72px. Body text at 17px with 1.6 line-height for comfortable reading.</p>
+          </div>
+          <div>
+            <h3 class="sys-h">Colour, with contrast checked</h3>
+            <ul class="swatches" role="list">
+              <li><i style="background:#16151a"></i><b>Ink</b><span>16.6:1 on background</span></li>
+              <li><i style="background:#4f4b55"></i><b>Ink 2</b><span>7.8:1 · body copy</span></li>
+              <li><i style="background:#6a6570"></i><b>Ink 3</b><span>5.2:1 · captions, control borders</span></li>
+              <li><i style="background:#1d5a52"></i><b>Accent</b><span>7.3:1 · links, white text on it 8.0:1</span></li>
+              <li><i style="background:#f7f4ef;box-shadow:inset 0 0 0 1px #d3cdc3"></i><b>Background</b><span>Warm ivory, calmer than pure white</span></li>
+              <li><i style="background:#121116"></i><b>Night</b><span>Text on it 16.7:1 · for "after dark" stories</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="sys-h">Components</h3>
+            <ul class="chips" role="list">
+              <li>Radio card</li><li>Segmented control</li><li>Order summary</li><li>Cost calculator</li><li>Comparison table</li><li>Accordion</li><li>Bag drawer</li><li>Toast</li><li>Inline error</li>
+            </ul>
+            <p class="small">8-point spacing. 48px minimum height for primary controls. Radii of 10, 16 and 24px.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 -->
+      <section id="a11y" aria-labelledby="h-a11y">
+        <p class="num">09</p>
+        <h2 id="h-a11y">Accessibility: WCAG 2.2 AA, built in</h2>
+        <ul class="checks" role="list">
+          <li><b>Contrast</b> All text meets 4.5:1 or better; control indicators meet 3:1.</li>
+          <li><b>Native controls</b> Real radio inputs grouped in fieldsets with legends, so screen readers announce "Finish, Gold, $499, 5 of 6".</li>
+          <li><b>Visible focus</b> A 3px focus ring on every interactive element, never removed.</li>
+          <li><b>Target size</b> Interactive targets are at least 44px, beyond the 24px minimum in 2.5.8.</li>
+          <li><b>Errors</b> Inline, persistent messages linked with <code>aria-describedby</code>, with <code>aria-invalid</code> and focus moved to the field.</li>
+          <li><b>Live updates</b> Price and summary changes are announced through polite live regions.</li>
+          <li><b>Dialogs</b> The bag uses a native modal dialog, Esc closes it, and focus returns to the Bag button.</li>
+          <li><b>Not colour alone</b> Selected states combine shape, weight and elevation.</li>
+          <li><b>Motion</b> All animation is disabled under <code>prefers-reduced-motion</code>.</li>
+          <li><b>Structure</b> A skip link, landmarks, one H1 and a logical heading order.</li>
+        </ul>
+      </section>
+
+      <!-- 10 -->
+      <section id="measure" aria-labelledby="h-measure">
+        <p class="num">10</p>
+        <h2 id="h-measure">How we'd measure success</h2>
+        <p class="lead">We'd set baselines in discovery and agree targets with the team. We won't promise numbers before seeing the data.</p>
+        <div class="metrics">
+          <div><b>Configurator completion</b><span>Visitors who start "Choose yours" and reach Add to bag</span></div>
+          <div><b>Size-related exchanges</b><span>Share of orders exchanged for fit, our main "fit before finance" signal</span></div>
+          <div><b>Kit-to-ring time</b><span>Days from kit delivery to confirmed size</span></div>
+          <div><b>Membership awareness</b><span>A post-purchase survey question: "Did you know about membership before buying?"</span></div>
+          <div><b>Support contacts</b><span>Sizing and billing questions per 1,000 orders</span></div>
+        </div>
+      </section>
+
+      <!-- 11 -->
+      <section id="plan" aria-labelledby="h-plan">
+        <p class="num">11</p>
+        <h2 id="h-plan">Plan &amp; next steps</h2>
+        <ol class="timeline">
+          <li><span>Week 1</span><b>Discovery</b><p>Analytics review, stakeholder interviews, 6–8 customer interviews including gift buyers.</p></li>
+          <li><span>Week 2</span><b>Structure &amp; flows</b><p>Validate personas, finalise IA, map sizing and membership journeys end to end.</p></li>
+          <li><span>Weeks 3–4</span><b>Design &amp; prototype</b><p>High-fidelity responsive design and a clickable prototype of the purchase flow.</p></li>
+          <li><span>Week 5</span><b>Usability testing</b><p>5–8 moderated sessions, including screen-reader and keyboard-only participants.</p></li>
+          <li><span>Week 6</span><b>Handoff</b><p>Design tokens, component specs, annotated accessibility notes and build QA support.</p></li>
+        </ol>
+        <div class="assume">
+          <h3>Assumptions to confirm with Oura</h3>
+          <ul>
+            <li>The Ring 5 size range (the concept uses sizes 4–15, as listed for Ring 4).</li>
+            <li>Sizing kit logistics and timing, and how a gift purchase hands sizing to the recipient.</li>
+            <li>Whether the free first month applies to yearly plans, and regional membership pricing.</li>
+            <li>Which Ring 4 Ceramic accessories, such as the charging case, are included.</li>
+          </ul>
+        </div>
+        <div class="cta-end">
+          <h2>See it working.</h2>
+          <p>Every decision above is live in the concept, built to be tested.</p>
+          <a class="btn btn-primary" href="index.html">Open the concept site
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <p class="sources">Product facts from Oura's Ring 4 product page and support pages, and the Ring 5 launch coverage of 28 May 2026. Unofficial portfolio concept, not affiliated with Oura Health Oy.</p>
+      </section>
+    </main>
+  </div>
+  <script>
+    // Highlight the current section in the table of contents
+    const links = [...document.querySelectorAll('.toc a')];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((a) => (a.getAttribute('href') === '#' + e.target.id ? a.setAttribute('aria-current', 'location') : a.removeAttribute('aria-current')));
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    document.querySelectorAll('main section[id]').forEach((s) => io.observe(s));
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oura Ring 5 · Website Concept</title>
+  <meta name="description" content="An unofficial UX concept for the Oura Ring 5 product page: size-first buying, transparent membership pricing, and outcome-led storytelling." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%2316151a' stroke-width='4'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="concept-bar" role="note">
+    <span><strong>Unofficial design concept.</strong> Not affiliated with or endorsed by Oura.</span>
+    <nav class="tabs" aria-label="Proposal views">
+      <a href="index.html" aria-current="page">Concept site</a>
+      <a href="proposal.html">Design rationale</a>
+    </nav>
+  </div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="wordmark" href="#main" aria-label="Oura Ring 5, top of page">Oura</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#outcomes">What it tracks</a>
+        <a href="#buy">Choose yours</a>
+        <a href="#cost">Membership</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="bag-btn" id="bag-open" type="button" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Bag <span class="bag-count" id="bag-count" data-n="0">0</span>
+        <span class="sr-only">items</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: lead with the benefit, then the proof -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Oura Ring 5</p>
+          <h1 id="hero-title">Less ring. <em>More you.</em></h1>
+          <p class="hero-lede">About 40% smaller than Ring 4, with up to 9 days of battery. Wear it all day and night, and wake up to what your body is telling you.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#buy">Choose your finish
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-secondary" href="#size-step">Not sure of your size?</a>
+          </div>
+          <p class="hero-note">From $399 · Membership $5.99/month, first month free</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true"><div class="ring-svg" data-ring="silver"></div></div>
+      </div>
+      <div class="wrap">
+        <dl class="facts">
+          <div><dt>smaller than Oura Ring 4</dt><dd>~40%</dd></div>
+          <div><dt>battery on a single charge</dt><dd>Up to 9 days</dd></div>
+          <div><dt>of charge in the travel case</dt><dd>Up to a month</dd></div>
+          <div><dt>lightweight and nonallergenic</dt><dd>Titanium</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- OUTCOMES before specs -->
+    <section class="night" id="outcomes" aria-labelledby="outcomes-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What it tells you</p>
+          <h2 id="outcomes-title">Three numbers every morning. Plain answers, not raw data.</h2>
+          <p>Oura turns what it senses overnight into simple daily scores, so you know whether to push or rest.</p>
+        </div>
+        <ul class="outcomes" role="list">
+          <li class="outcome">
+            <h3>Sleep</h3>
+            <p>How long and how well you slept, including time in each sleep stage.</p>
+            <div class="score"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="val" cx="32" cy="32" r="27" stroke-dasharray="142.5 170"/></svg><div><b>84</b><span>Sleep score · Good</span></div></div>
+          </li>
+          <li class="outcome">
+            <h3>Readiness</h3>
+            <p>How recovered you are, so you can decide between a hard workout and a rest day.</p>
+            <div class="score"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="val" cx="32" cy="32" r="27" stroke-dasharray="132.3 170"/></svg><div><b>78</b><span>Readiness · Good</span></div></div>
+          </li>
+          <li class="outcome">
+            <h3>Activity</h3>
+            <p>Movement across the whole day, with real-time workout tracking on Ring 5.</p>
+            <div class="score"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="track" cx="32" cy="32" r="27"/><circle class="val" cx="32" cy="32" r="27" stroke-dasharray="154 170"/></svg><div><b>91</b><span>Activity score · Optimal</span></div></div>
+          </li>
+        </ul>
+        <div class="new-feature">
+          <span class="pill">New on Ring 5</span>
+          <p><strong>Blood pressure trends and nighttime breathing analysis.</strong> <span class="muted">Spot changes over time and bring better questions to your doctor. Wellness insights, not a medical diagnosis.</span></p>
+        </div>
+        <p class="illustrative">Scores shown are illustrative examples, not real data.</p>
+      </div>
+    </section>
+
+    <!-- CONFIGURATOR: size-first, cost-transparent -->
+    <section id="buy" aria-labelledby="buy-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Choose yours</p>
+          <h2 id="buy-title">Three choices. No surprises at checkout.</h2>
+          <p>Pick a finish, tell us your size (or let us send a sizing kit first), and choose how to pay for membership. You'll see the full cost before you add to bag.</p>
+        </div>
+
+        <div class="config">
+          <div class="config-visual" aria-live="polite">
+            <div class="ring-svg" id="config-ring" data-ring="silver" role="img" aria-label="Oura Ring 5 in Silver"></div>
+            <p class="config-name" id="config-name">Silver</p>
+            <p class="config-price" id="config-price">$399</p>
+          </div>
+
+          <form class="steps" id="config-form" novalidate>
+            <fieldset>
+              <legend><span class="n" aria-hidden="true">1</span>Finish</legend>
+              <p class="step-help">Same ring, same features. Finishes differ only in look and price.</p>
+              <div class="options finishes" id="finish-options"></div>
+            </fieldset>
+
+            <fieldset id="size-step">
+              <legend><span class="n" aria-hidden="true">2</span>Size</legend>
+              <p class="step-help">Oura sizes can differ from jewelry sizes. A good fit matters for accurate readings.</p>
+              <div class="options">
+                <label class="opt"><input type="radio" name="sizing" value="kit" checked />
+                  <span class="opt-body"><span class="check" aria-hidden="true"></span><span class="opt-text"><b>Send me a sizing kit first<span class="tag">Recommended</span></b><span>Try sample sizes at home. Your ring ships once you confirm.</span></span></span></label>
+                <label class="opt"><input type="radio" name="sizing" value="known" />
+                  <span class="opt-body"><span class="check" aria-hidden="true"></span><span class="opt-text"><b>I know my Oura size</b><span>From a previous Oura ring or sizing kit</span></span></span></label>
+              </div>
+              <div class="field" id="size-field" hidden>
+                <label for="size-select">Your Oura size</label>
+                <select id="size-select" name="size" aria-describedby="size-error">
+                  <option value="">Select a size</option>
+                </select>
+                <p class="field-error" id="size-error" hidden>Choose your size, or switch to the sizing kit.</p>
+              </div>
+              <div class="callout" id="kit-note">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+                <span>We'll hold your finish choice. Wear the sample overnight, confirm your size in the app, and your ring ships right away.</span>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n" aria-hidden="true">3</span>Membership</legend>
+              <p class="step-help">Membership unlocks the ring's full features in the Oura app. Your first month is free on either plan.</p>
+              <div class="options">
+                <label class="opt"><input type="radio" name="plan" value="monthly" checked />
+                  <span class="opt-body"><span class="check" aria-hidden="true"></span><span class="opt-text"><b>Monthly</b><span>Flexible. Billed each month.</span></span><span class="opt-meta">$5.99/mo</span></span></label>
+                <label class="opt"><input type="radio" name="plan" value="yearly" />
+                  <span class="opt-body"><span class="check" aria-hidden="true"></span><span class="opt-text"><b>Yearly</b><span>Saves $1.89 a year vs monthly</span></span><span class="opt-meta">$69.99/yr</span></span></label>
+              </div>
+            </fieldset>
+
+            <div class="summary" aria-live="polite">
+              <h3>Your order</h3>
+              <dl>
+                <dt id="sum-ring-label">Oura Ring 5 · Silver</dt><dd id="sum-ring">$399.00</dd>
+                <dt>Sizing</dt><dd id="sum-size">Sizing kit first</dd>
+                <dt>Membership</dt><dd>First month free</dd>
+                <dt class="total">Due today</dt><dd class="total" id="sum-total">$399.00</dd>
+              </dl>
+              <p class="then" id="sum-then">Then $5.99/month for membership, starting after your free month.</p>
+              <button class="btn btn-primary btn-block" type="submit">Add to bag</button>
+              <p class="fineprint">Prices in USD, before tax. Concept demo: nothing is charged.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUE COST -->
+    <section id="cost" aria-labelledby="cost-title" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Membership, explained</p>
+          <h2 id="cost-title">What it really costs to own.</h2>
+          <p>The ring is a one-time purchase. Membership is ongoing. Here's the honest total, so you can choose with confidence.</p>
+        </div>
+        <div class="calc">
+          <form class="calc-controls" id="calc-form" aria-label="Cost of ownership calculator">
+            <div>
+              <span class="lbl" id="years-lbl">Over</span>
+              <div class="seg" role="radiogroup" aria-labelledby="years-lbl">
+                <label><input type="radio" name="years" value="1" /><span>1 year</span></label>
+                <label><input type="radio" name="years" value="2" checked /><span>2 years</span></label>
+                <label><input type="radio" name="years" value="3" /><span>3 years</span></label>
+              </div>
+            </div>
+            <div>
+              <span class="lbl" id="cplan-lbl">Paying</span>
+              <div class="seg" role="radiogroup" aria-labelledby="cplan-lbl">
+                <label><input type="radio" name="cplan" value="monthly" checked /><span>Monthly</span></label>
+                <label><input type="radio" name="cplan" value="yearly" /><span>Yearly</span></label>
+              </div>
+            </div>
+            <p class="muted" style="font-size:var(--t-xs);color:var(--ink-3)">Uses the finish you picked above. Includes your free first month; yearly plans are billed a year at a time.</p>
+          </form>
+          <div class="calc-out" aria-live="polite">
+            <p class="big" id="calc-total">$536.77</p>
+            <p class="per" id="calc-per">total over 2 years · about $22.37 a month</p>
+            <div class="bar" aria-hidden="true"><i class="b-ring" id="bar-ring"></i><i class="b-mem" id="bar-mem"></i></div>
+            <div class="legend">
+              <span><i style="background:var(--ink)"></i>Ring <b id="calc-ring">$399.00</b></span>
+              <span><i style="background:var(--accent)"></i>Membership <b id="calc-mem">$137.77</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE -->
+    <section id="compare" aria-labelledby="compare-title" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Compare</p>
+          <h2 id="compare-title">Ring 5 or Ring 4 Ceramic?</h2>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="compare">
+            <caption>Ring 4 battery figure from Oura's Ring 4 product page. Prices in USD.</caption>
+            <thead>
+              <tr><td></td><th scope="col">Oura Ring 5<small>Newest</small></th><th scope="col">Oura Ring 4 Ceramic<small>Still available</small></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Starting price</th><td>$399</td><td>$349</td></tr>
+              <tr><th scope="row">Size</th><td class="yes">About 40% smaller than Ring 4</td><td>Ring 4 size</td></tr>
+              <tr><th scope="row">Material</th><td>Titanium</td><td>Zirconia ceramic</td></tr>
+              <tr><th scope="row">Battery</th><td class="yes">Up to 9 days</td><td>5–8 days</td></tr>
+              <tr><th scope="row">Travel charging case</th><td class="yes">Holds up to a month of charge</td><td>Check with Oura</td></tr>
+              <tr><th scope="row">Membership</th><td>$5.99/mo or $69.99/yr</td><td>$5.99/mo or $69.99/yr</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Questions</p><h2 id="faq-title">Before you buy</h2></div>
+        <div class="faq">
+          <details><summary>Do I need a membership?</summary><p>Yes. Membership unlocks the ring's full features in the Oura app. It's $5.99 a month or $69.99 a year in the US, and your first month is free.</p></details>
+          <details><summary>How do I find my size?</summary><p>Choose "Send me a sizing kit first" when you order. Wear the sample sizes at home, confirm the one that fits in the app, and your ring ships. Oura sizes can differ from jewelry sizes, so the kit is the safest route.</p></details>
+          <details><summary>How long does the battery last?</summary><p>Up to 9 days on a single charge. The travel charging case holds up to a month of charge, so you can leave the cable at home.</p></details>
+          <details><summary>Should I get Ring 5 or Ring 4 Ceramic?</summary><p>Ring 5 is about 40% smaller, with longer battery life and a titanium body, from $399. Ring 4 Ceramic starts at $349 if you prefer a ceramic finish or a lower price.</p></details>
+          <details><summary>Is it a medical device?</summary><p>No. Oura provides wellness insights such as sleep, readiness and blood pressure trends. It doesn't diagnose conditions. Talk to your doctor about any health concerns.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <p class="wordmark" aria-hidden="true">Oura</p>
+        <p>This is an unofficial UX concept made for a design portfolio. It is not affiliated with, endorsed by, or connected to Oura Health Oy. Oura is a trademark of its owner.</p>
+        <p>Product details are taken from Oura's public announcements and product pages as of November 2026, and may change.</p>
+      </div>
+      <div>
+        <p><a href="proposal.html">Read the design rationale →</a></p>
+        <p>UX and UI concept for a design portfolio.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bag drawer -->
+  <dialog class="drawer" id="bag" aria-labelledby="bag-title">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <h2 id="bag-title">Your bag</h2>
+        <button class="icon-btn" type="button" id="bag-close" aria-label="Close bag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="drawer-body" id="bag-body"></div>
+      <div class="drawer-foot">
+        <button class="btn btn-primary btn-block" type="button" disabled aria-describedby="checkout-note">Checkout</button>
+        <p class="fineprint" id="checkout-note">Checkout is disabled in this concept.</p>
+      </div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
