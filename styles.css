@@ -59,6 +59,8 @@ button, input, select { font: inherit; color: inherit; }
 }
 .concept-bar strong { color: var(--night-ink); font-weight: 600; }
 .concept-bar a { color: var(--night-accent); font-weight: 600; text-underline-offset: 3px; }
+.concept-bar a.mock-back { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; color: var(--night-ink); font-weight: 600; text-decoration: none; }
+.concept-bar a.mock-back:hover { background: rgba(255,255,255,.12); }
 .concept-bar .tabs { display: inline-flex; gap: 2px; background: rgba(255,255,255,.08); border-radius: 999px; padding: 2px; }
 .concept-bar .tabs a { color: var(--night-ink-2); text-decoration: none; padding: 4px 12px; border-radius: 999px; font-weight: 500; }
 .concept-bar .tabs a[aria-current="page"] { background: var(--night-ink); color: var(--night); }
