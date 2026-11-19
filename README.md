@@ -1,6 +1,6 @@
 # Oura Ring 5: Website Concept & UX Proposal
 
-Design inspiration: a UX/UI concept, presented the way a designer would pitch it to a client. It has two parts:
+Prototype: a UX/UI concept, presented the way a designer would pitch it to a client. It has two parts:
 
 - **`index.html`: the concept site.** A working product page and purchase flow for the Oura Ring 5.
 - **`proposal.html`: the design rationale.** The client-facing pitch: problems, proto-personas, heuristic review, principles, page structure, the key flow, design decisions, design system, accessibility, success metrics and project plan.
